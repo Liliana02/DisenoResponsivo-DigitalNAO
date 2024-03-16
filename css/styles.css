@@ -1,0 +1,129 @@
+/* Importamos un tipo de letra mediante un link de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif; /* Indicamos la tipografia */
+    font-size: 15px; /* Tamaño de letra */
+    /* Añadimos indicadores de margen, bordes, transición */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .5s linear;
+}
+
+
+.container{
+    /* Generamos el desvanecimiento de un color */
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    /* Indicamos la altura mínima, posición relativa, contenedor flexible y alinearlos al centro */
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.container .text-container{
+    /* Indicamos el tamaño inicial, un padding, ocultar por si se desborda y dar color blanco */
+    flex-basis: 60%;
+    padding-left: 3rem;
+    overflow: hidden;
+    color: white;
+
+    /* Aplicamos la animación */
+    animation: start ease-in 1.5s alternate;
+}
+
+.container .text-container .title{
+    /* Damos el tamaño al título y convertirlo a mayúsculas */
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.container .text-container .sub-title{
+    /* Generamos las indicaciones para los subtitulos */
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+
+.container .text-container .text{
+    font-size: 1rem;
+    font-weight: normal;
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+.container .text-container .button{
+    width: 8rem;
+    height: 2rem;
+    background-color: #2879fc;
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
+.container .img-container{
+    /* Indicamos el tamaño inicial, la posición, alineación y sin desbodamiento visible */
+    flex-basis: 40%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+
+    /* Aplicamos la animación */
+    animation: start ease-in 1.5s alternate;
+}
+
+/* Generamos una animación de traslado */
+@keyframes start {
+    0%{
+        transform: translate(-50rem);
+    }100%{
+        transform: translate(0);
+    }
+}
+
+/*  */
+@media screen and (max-width: 1360px) {
+    
+    .container .text-container .title{
+        font-size: 3rem;
+    }
+
+    .container .text-container .sub-title{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .container{
+        flex-direction: column-reverse;
+    }
+
+    .container .text-container{
+        margin: 0;
+        display: flex;
+        flex-direction: initial;
+        padding-left: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 40%;
+        text-align: center;
+
+        padding-bottom: 7rem;
+
+        animation: start ease-in 1.5s alternate;
+    }
+
+    .container .img-container{
+        flex-basis: 60%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding-bottom: 3rem;
+    }
+}
+
