@@ -20,6 +20,9 @@
     position: relative;
     display: flex;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .container .text-container{
@@ -125,5 +128,9 @@
 
         padding-bottom: 3rem;
     }
+    body{
+        margin: 0;
+    }
+
 }
 
